@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 $from = new SendGrid\Email("Example User", "help@totalfinance.herokuapp.com");
 $subject = "Sending with SendGrid is Fun";
-$to = new SendGrid\Email("Example User", "daniel@paceifictech.us");
+$to = new SendGrid\Email("Example User", "daniel@pacifictech.us");
 $content = new SendGrid\Content("text/plain", "and easy to do anywhere, even with PHP");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
