@@ -147,7 +147,7 @@ function kitchenSink()
 }
 function sendHelloEmail()
 {
-    $apiKey = getenv('SENDGRID_API_KEY');
+    $apiKey = getenv('PTTotalFinance');
     $sg = new \SendGrid($apiKey);
     $request_body = helloEmail();
     $response = $sg->client->mail()->send()->post($request_body);
