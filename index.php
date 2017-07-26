@@ -6,10 +6,10 @@ function helloEmail()
 {
     $from = new Email(null, "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
-    $to = new Email(null, "test@example.com");
+    $to = new Email(null, "daniel.alan.clough@gmail.com");
     $content = new Content("text/plain", "some text here");
     $mail = new Mail($from, $subject, $to, $content);
-    $to = new Email(null, "test2@example.com");
+    $to = new Email(null, "daniel@pacifictech.us");
     $mail->personalization[0]->addTo($to);
     //echo json_encode($mail, JSON_PRETTY_PRINT), "\n";
     return $mail;
@@ -18,7 +18,7 @@ function kitchenSink()
 {
     $from = new Email("DX", "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
-    $to = new Email("Example User", "test1@example.com");
+    $to = new Email("Example User", "daniel.alan.clough@gmail.com");
     $content = new Content("text/plain", "some text here");
     $mail = new Mail($from, $subject, $to, $content);
     $email2 = new Email("Example User", "test2@example.com");
