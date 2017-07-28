@@ -1,7 +1,8 @@
 <?php
 namespace SendGrid;
 // If you are using Composer
-require __DIR__ . '<PATH_TO>/vendor/autoload.php';
+require 'vendor/autoload.php';
+
 function helloEmail()
 {
     $from = new Email(null, "test@example.com");
@@ -14,7 +15,7 @@ function helloEmail()
     //echo json_encode($mail, JSON_PRETTY_PRINT), "\n";
     return $mail;
 }
-function kitchenSink()
+/*function kitchenSink()
 {
     $from = new Email("DX", "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
@@ -144,27 +145,26 @@ function kitchenSink()
     $mail->setReplyTo($reply_to);
     //echo json_encode($mail, JSON_PRETTY_PRINT), "\n";
     return $mail;
-}
-function sendHelloEmail()
-{
-    $apiKey = getenv('PTTotalFinance');
-    $sg = new \SendGrid($apiKey);
+}*/
+
+function sendHelloEmail() {
+    //$apiKey = getenv('PTTotalFinance');
+    $sg = new SendGrid('PTTotalFinance');//$apiKey);
     $request_body = helloEmail();
     $response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
     echo $response->body();
-    print_r($response->headers());
-}
-function sendKitchenSink()
-{
+    print_r($response->headers()); }
+
+function sendKitchenSink() {
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
     $request_body = kitchenSink();
     $response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
     echo $response->body();
-    print_r($response->headers());
-}
+    print_r($response->headers()); }
+
 sendHelloEmail();  // this will actually send an email
 sendKitchenSink(); // this will only send an email if you set SandBox Mode to false
 ?>
