@@ -52,7 +52,6 @@ setFrom($senderid)->
 setSubject($subject)->
 setText($message);
   
-$sendgrid->send($mail);
 //Send Mail.
 if ($sendgrid->send($mail)) {
 echo "<script type='text/javascript'>alert('Sent mail successfully.')</script>";
