@@ -3,8 +3,6 @@
 // https://github.com/sendgrid/sendgrid-php
 // If you are using Composer (recommended)
 require 'vendor/autoload.php';
-require_once '../libs/swift-5.0.1/lib/swift_required.php';
-require '../libs/sendgrid-php/SendGrid_loader.php';
 $from = new SendGrid\Email("Example User", "daniel@pacifictech.us");
 $subject = "Sending with SendGrid is Fun";
 $to = new SendGrid\Email("Example User", "daniel.alan.clough@gmail.com");
@@ -16,3 +14,5 @@ $response = $sg->client->mail()->send()->post($mail);
 echo $response->statusCode();
 print_r($response->headers());
 echo $response->body();
+$sendgrid->send($mail);
+?>
