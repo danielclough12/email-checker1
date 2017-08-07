@@ -1,9 +1,9 @@
-<?php /*
+<?php
 // using SendGrid's PHP Library
 // https://github.com/sendgrid/sendgrid-php
 // If you are using Composer (recommended)
 require 'vendor/autoload.php';
-$from = new SendGrid\Email("Example User", "daniel@pacifictech.us");
+$from = new SendGrid\Email("Example User", "danielclough12@email-checker1.herokuapp.com");
 $subject = "Sending with SendGrid is Fun";
 $to = new SendGrid\Email("Example User", "daniel.alan.clough@gmail.com");
 $content = new SendGrid\Content("text/plain", "and easy to do anywhere, even with PHP");
@@ -15,11 +15,12 @@ echo $response->statusCode();
 print_r($response->headers());
 echo $response->body();
 $sendgrid->send($mail);
-?>
-<?php */
+mail($from, $subject, $to, $content);
+/*?>
+<?php
 require 'vendor/autoload.php';
 $sendgrid = new SendGrid("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");
-$email    = new SendGrid\Email();
+$email    = new SendGrid\Mail();
 
 $email->addTo("test@sendgrid.com")
       ->setFrom("daniel.alan.clough@gmail.com")
@@ -27,4 +28,5 @@ $email->addTo("test@sendgrid.com")
       ->setHtml("and easy to do anywhere, even with PHP");
 
 $sendgrid->send($email);
+mail($email); */
 ?>
