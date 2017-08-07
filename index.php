@@ -1,4 +1,4 @@
-<?php
+<?php /*
 // using SendGrid's PHP Library
 // https://github.com/sendgrid/sendgrid-php
 // If you are using Composer (recommended)
@@ -15,4 +15,16 @@ echo $response->statusCode();
 print_r($response->headers());
 echo $response->body();
 $sendgrid->send($mail);
+?>
+<?php */
+require 'vendor/autoload.php';
+$sendgrid = new SendGrid("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");
+$email    = new SendGrid\Email();
+
+$email->addTo("test@sendgrid.com")
+      ->setFrom("daniel.alan.clough@gmail.com")
+      ->setSubject("Sending with SendGrid is Fun")
+      ->setHtml("and easy to do anywhere, even with PHP");
+
+$sendgrid->send($email);
 ?>
