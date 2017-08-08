@@ -2,7 +2,7 @@
 // using SendGrid's PHP Library
 // https://github.com/sendgrid/sendgrid-php
 // If you are using Composer (recommended)
-//require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 $from = new SendGrid\Email("Example User", "danielclough12@email-checker1.herokuapp.com");
 $subject = "Sending with SendGrid is Fun";
 $to = new SendGrid\Email("Example User", "daniel.alan.clough@gmail.com");
@@ -10,9 +10,9 @@ $content = new SendGrid\Content("text/plain", "and easy to do anywhere, even wit
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 $apiKey = getenv('SG.FxJXt2uWTpetV4i8jwHVRw');
 $sg = new \SendGrid($apiKey);
-//$response = $sg->client->mail()->send()->post($mail);
+$response = $sg->client->mail()->send()->post($mail);
 echo $response->statusCode();
-//print_r($response->headers());
+print_r($response->headers());
 echo $response->body();
 if($sendgrid->send($mail))
       echo 'THIS IS CORRECT';
