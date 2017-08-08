@@ -1,4 +1,10 @@
 <?php
+
+mail('daniel.alan.clough@gmail.com', 'hello', 'hello');
+/*
+?>
+
+<?php
 // using SendGrid's PHP Library
 // https://github.com/sendgrid/sendgrid-php
 // If you are using Composer (recommended)
@@ -16,7 +22,7 @@ print_r($response->headers());
 echo $response->body();
 $sendgrid->send($mail);
 mail($from, $subject, $to, $content);
-/*?>
+?>
 <?php
 require 'vendor/autoload.php';
 $sendgrid = new SendGrid("SG.FxJXt2uWTpetV4i8jwHVRw");
