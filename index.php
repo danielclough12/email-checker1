@@ -1,6 +1,9 @@
 <?php
 
-mail('daniel.alan.clough@gmail.com', 'hello', 'hello');
+if(mail('daniel.alan.clough@gmail.com', 'hello', 'hello'))
+      echo 'THIS IS CORRECT';
+else
+      echo 'This is incorrect';
 /*
 ?>
 
